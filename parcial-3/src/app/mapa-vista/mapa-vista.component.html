@@ -1,0 +1,31 @@
+<p>mapa-vista works!</p>
+<div>
+    <strong>A) Tengo coordenadas</strong>
+    <div>
+        <strong>Coloco coordenadas</strong>
+        <div>
+            <label for="inputLatitud">Latitud:</label>
+            <input type="number" [(ngModel)]="latitud" class="form-control" (change)="actualizarCalle()" [ngModelOptions]="{standalone: true}" id="inputLatitud">
+        </div>
+        <div>
+            <label for="inputLongitud">Longitud:</label>
+            <input type="number" [(ngModel)]="longitud" class="form-control" (change)="actualizarCalle()" [ngModelOptions]="{standalone: true}" id="inputLongitud">
+        </div>
+    </div>
+    <strong>B) Tengo calle</strong>
+    <div>
+        <strong>Coloco calle</strong>
+        <div>
+            <label for="inputCalle">Calle:</label>
+            <input type="text" [(ngModel)]="calle" class="form-control" (change)="actualizarCoordenadas()" id="inputCalle">
+        </div>
+    </div>
+    <strong>Veo resultados</strong>
+    <div>
+    <p>Latitud: {{this.latitud}}</p>
+    <p>Longitud: {{this.longitud}}</p>
+    <p>Calle: {{this.calle}}</p>
+</div>
+    <app-mapa [latitud]="latitud" [longitud]="longitud"></app-mapa>
+</div>
+

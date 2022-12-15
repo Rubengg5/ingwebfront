@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="container-xxl bd-gutter">
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6 p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">{{x.name}}</h1>
+              <p class="col-md-8 fs-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg> {{x.mg}}</p>
+              <!-- <p>{{x.mg}}</p> -->
+              <button class="btn btn-secondary btn-lg" type="button">Por si queremos redireccionar a algún lao</button>
+            </div>
+        </div>
+    
+        <div class="col-md-6 p-5 mb-4 bg-light rounded-3">
+            <!--Pa la imagen niño-->
+            <!-- <div class="h-100 p-5 text-bg-dark rounded-3" style="background-repeat: no-repeat; background-image: url('https://res.cloudinary.com/dee6pfpam/image/upload/v1669835212/{{vivienda.imagen}}');" [routerLink]="['/vivienda', vivienda.id]"></div> -->
+        </div>
+      </div>
+  </div>
+<app-footer></app-footer>
