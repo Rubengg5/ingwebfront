@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { XDetailsComponent } from './x-details/x-details.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ImagenComponent } from './imagen/imagen.component';
+import { XCreateComponent } from './x-create/x-create.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { InicioComponent } from './inicio/inicio.component';
     HeaderComponent,
     FooterComponent,
     XDetailsComponent,
-    InicioComponent
+    InicioComponent,
+    ImagenComponent,
+    XCreateComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

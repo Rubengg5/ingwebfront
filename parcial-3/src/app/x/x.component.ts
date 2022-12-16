@@ -11,12 +11,16 @@ import { xService } from '../services/x-service';
 export class XComponent implements OnInit {
 
   xList: x[] = [];
+  userId: any = localStorage.getItem("id");
 
   constructor(private route: ActivatedRoute, private xService: xService) { }
 
   ngOnInit(): void {
 
-    this.xService.getx()
+    console.log(localStorage);
+
+
+    this.xService.getxByUsuario(this.userId)
     .subscribe(data => 
       {
         this.xList = data;
@@ -24,8 +28,17 @@ export class XComponent implements OnInit {
       });
   }
 
-  orderByMg(): void {
+  orderXByMg(): void {
     this.xList.sort(function(a, b){return b.mg - a.mg});
   }
+
+  // filterXByMg(mgs: Number){
+  //   this.viviendaService.getViviendaByLocalidad(localidad)
+  //   .subscribe(data => 
+  //     {
+  //       this.viviendaList = data;
+  //       console.log(this.viviendaList);
+  //     });
+  // }
 
 }

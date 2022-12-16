@@ -2,10 +2,16 @@
 <div class="px-4 pt-5 my-5 text-center border-bottom">
     <h1 class="display-4 fw-bold">Examen</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Página web donde podrás recopilar tus X.</p>
+        <p class="lead mb-4">Página web donde podrás recopilar tus Xs.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <button type="button" class="btn btn btn-warning btn-lg px-4 me-sm-3" [routerLink]="['/login']">Iniciar
-                Sesión</button>
+            <div *ngIf="!isLoggedIn">
+                <button type="button" class="btn btn btn-warning btn-lg px-4 me-sm-3" [routerLink]="['/login']">Iniciar
+                    Sesión</button>
+            </div>
+            <div *ngIf="isLoggedIn">
+                <button type="button" class="btn btn btn-warning btn-lg px-4 me-sm-3" [routerLink]="['/logout']">Cerrar
+                    Sesión</button>
+            </div>
             <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Registrarse</button> -->
         </div>
     </div>

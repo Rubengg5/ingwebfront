@@ -1,0 +1,10 @@
+<p>imagen works!</p>
+<div>
+    <strong>Subimos imagen</strong><br>
+    <label for="inputImagen">Imagen</label><br> 
+    <input (change)="capturarFile($event!)" type="file">
+</div>
+<div>
+    <strong>Vemos la imagen</strong><br>
+    <img src="{{urlImagen}}">
+</div>

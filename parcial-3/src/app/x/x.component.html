@@ -1,29 +1,40 @@
 <app-header></app-header>
-    <div class="container px-4 py-5" id="custom-cards">
-        <h1 class="pb-1 border-bottom">Tus x</h1>
-    
-        <div *ngFor="let x of xList" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="..." alt="Si caen images las poneis aqui">
-                <div class="card-body">
-                  <h5 class="card-title">{{x.name}}</h5>
-                    <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                    </svg> {{x.mg}}</p>
-                  <a href="/x/{{x.id}}" class="btn btn-secondary">Detalles</a>
-                </div>
-              </div>
-          </div>
+<div class="container px-4 py-5" id="custom-cards">
+  <h1 class="pb-1 border-bottom">Tus x</h1>
+  <a href="/crearx" class="btn btn-secondary">Nuevo X</a>
+
+  <div *ngFor="let x of xList" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Si caen images las poneis aqui">
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-heart-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+            </svg> {{x.mg}}</p>
+          <a href="/x/{{x.id}}" class="btn btn-secondary">Detalles</a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4"><b>Ordenar por número de Mgs: </b></p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <!-- <input #localidad type="text" value="" class="col form-control px-4 me-sm-3" id="localidad" aria-describedby="emailHelp" placeholder="Localidad"> -->
-          <button type="submit" class="col btn btn-secondary btn-lg px-4" (click)="orderByMg()">Ordenar</button>
-        </div>
-      </div>
+<div class="row">
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4"><b>Ordenar por número de Mgs: </b></p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <!-- <input #localidad type="text" value="" class="col form-control px-4 me-sm-3" id="localidad" aria-describedby="emailHelp" placeholder="Localidad"> -->
+      <button type="submit" class="col btn btn-secondary btn-lg px-4" (click)="orderXByMg()">Ordenar</button>
+    </div>
+  </div>
 
+  <!-- <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4"><b>Filtrar X con más mgs que: </b></p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      <input #mgs type="text" value="" class="col form-control px-4 me-sm-3" id="mgs" aria-describedby="mgs" placeholder="Mgs">
+      <button type="submit" class="col btn btn-secondary btn-lg px-4" (click)="filterXByMg(mgs.value)">Filtrar</button>
+    </div>
+  </div> -->
+</div>
 <app-footer></app-footer>

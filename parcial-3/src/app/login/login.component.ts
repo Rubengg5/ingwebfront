@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit{
       debugger;
       await this.service.LoginWithGoogle(response.credential).subscribe(
         (x:any) => {
+          console.log(x);
           debugger;
           localStorage.setItem("token", x.token);
           localStorage.setItem("id", x.id)

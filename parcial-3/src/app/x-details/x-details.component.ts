@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { xService } from '../services/x-service';
+import { x } from '../models/x';
+import { Ubicacion } from '../models/ubicacion';
 
 @Component({
   selector: 'app-x-details',
@@ -8,8 +10,19 @@ import { xService } from '../services/x-service';
   styleUrls: ['./x-details.component.css']
 })
 export class XDetailsComponent implements OnInit {
-
-  x: any = null;
+  ubicacion: Ubicacion = {
+    latitud: 0,
+    longitud: 0
+  }
+  xActual: x = {
+    id: "",
+    name: "",
+    mg:0,
+    usuario: "",
+    urlImagen: "",
+    ubicacion: this.ubicacion
+  }
+  
 
   constructor(private route: ActivatedRoute,
     private xService: xService) { }
@@ -20,8 +33,10 @@ export class XDetailsComponent implements OnInit {
     this.xService.getxById(id)
     .subscribe(data => 
       {
-        this.x = data;
-        console.log(this.x)
+        this.xActual = data;
+        
+        this.xActual.ubicacion = data.ubicacion
+        console.log(this.xActual)
       });
   }
 
