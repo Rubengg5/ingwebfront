@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseURL: "https://rubengg-back.herokuapp.com",
-  clientId: "182737891985-bhlpao31dj89qgu93i4pp3die544nomb.apps.googleusercontent.com",
+  clientId: "182737891985-808001okoua1q3me4rkooecn9qdhkhoj.apps.googleusercontent.com/",
   cloudinaryURL: "https://res.cloudinary.com/dee6pfpam/image/upload/v1669835212/",
   cloudinaryCloudName: "dee6pfpam",
   cloudinaryApiUrl : "https://api.cloudinary.com/v1_1/dee6pfpam/upload",
