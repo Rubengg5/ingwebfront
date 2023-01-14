@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { AppComponent } from './app.component';
-import { TestPabloComponent } from './test-pablo/test-pablo.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UsuarioComponent } from './usuario/usuario.component';
@@ -33,11 +32,11 @@ import { ValoracionesComponent } from './valoraciones/valoraciones.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalComponent } from './paypal/paypal.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestPabloComponent,
     UsuarioComponent,
     ViviendaDetailsComponent,
     ReservaDetailsComponent,
@@ -57,7 +56,8 @@ import { PaypalComponent } from './paypal/paypal.component';
     ValoracionesComponent,
     LogoutComponent,
     PaypalComponent,
-    MensajesComponent
+    MensajesComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

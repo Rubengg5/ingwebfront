@@ -4,7 +4,6 @@ import { ReservaService } from './services/reserva.service';
 import { ViviendaService } from './services/vivienda.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router'; // CLI imports router
-import { TestPabloComponent } from './test-pablo/test-pablo.component';
 import { SocialAuthService } from 'angularx-social-login';
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -13,7 +12,6 @@ declare var ol: any;
 
 
 const routes: Routes = [
-  { path: '/test-pablo', component: TestPabloComponent },
 ];
 
 @Component({

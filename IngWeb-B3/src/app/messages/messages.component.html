@@ -1,0 +1,33 @@
+<app-header></app-header>
+<!--Container-->
+<div *ngIf="!legitimo">
+    <h1 style="text-align: center;">No tienes acceso a esta página</h1>
+</div>
+<div *ngIf="legitimo" class="container px-4 py-5" id="custom-cards">
+    <h1 class="pb-1 border-bottom">Messages</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>De</th>
+                <th>Para</th>
+                <th>Asunto</th>
+                <th>Stamp</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let message of messagesList">
+            <tr>
+                <td>{{message.id}}</td>
+                <td>{{message.de}}</td>
+                <td>{{message.para}}</td>
+                <td>{{message.asunto}}</td>
+                <td>{{message.stamp}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-warning btn-lg" type="button" [routerLink]="['/newMessage']">Crear Message</button>
+</div>
+<br>
+<br>
+<app-footer></app-footer>
