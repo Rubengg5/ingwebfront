@@ -33,6 +33,8 @@ import { MensajesComponent } from './mensajes/mensajes.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalComponent } from './paypal/paypal.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MessageCreateComponent } from './message-create/message-create.component';
+import { LogsComponent } from './logs/logs.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { MessagesComponent } from './messages/messages.component';
     LogoutComponent,
     PaypalComponent,
     MensajesComponent,
-    MessagesComponent
+    MessagesComponent,
+    MessageCreateComponent,
+    LogsComponent
   ],
   imports: [
     BrowserModule,

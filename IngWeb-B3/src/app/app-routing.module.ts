@@ -5,8 +5,10 @@ import { GasolinerasComponent } from './gasolineras/gasolineras.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { LogsComponent } from './logs/logs.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { MessageCreateComponent } from './message-create/message-create.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PaypalComponent } from './paypal/paypal.component';
 import { ReservaCreateComponent } from './reserva-create/reserva-create.component';
@@ -31,11 +33,13 @@ const routes: Routes = [
   {path: 'viviendas/:id', component: ViviendasComponent},
   {path: 'reservas/:id', component: ReservasComponent},
   {path: 'newVivienda', component: ViviendaCreateComponent},
+  {path: 'newMessage', component: MessageCreateComponent},
   {path: 'newReserva/:id', component: ReservaCreateComponent},
   {path: 'modifyReserva/:id', component: ReservaModifyComponent},
   {path: 'modifyVivienda/:id', component: ViviendaModifyComponent},
   {path: 'reservasVivienda/:id', component: ReservasViviendaComponent},
   {path: 'gasolineras', component: GasolinerasComponent},
+  {path: 'logs', component: LogsComponent},
   {path: "paypal", component: PaypalComponent},
   {path: 'chat/:id', component: MensajesComponent},
   {path: 'messages/:id', component: MessagesComponent}

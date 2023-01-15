@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <!--Container-->
 <div *ngIf="!legitimo">
     <h1 style="text-align: center;">No tienes acceso a esta página</h1>
@@ -17,7 +18,7 @@
             </tr>
         </thead>
         <tbody *ngFor="let message of messagesList">
-            <tr>
+            <tr (click)="showMessageContent(message.id)" [ngClass]="{'row-pointer':isHover}" (mouseenter)="isHover=true" (mouseleave)="isHover=false">
                 <td>{{message.id}}</td>
                 <td>{{message.de}}</td>
                 <td>{{message.para}}</td>
@@ -26,8 +27,16 @@
             </tr>
         </tbody>
     </table>
+
+    <div class="card">
+        <div class="card-header">
+          <h5>Mensaje</h5>
+        </div>
+        <div class="card-body" [innerHTML]="messageContent"></div>
+        <img [src]="messageImage" *ngIf="messageImage" alt="Imagen del mensaje">
+    <br>
+
     <button class="btn btn-warning btn-lg" type="button" [routerLink]="['/newMessage']">Crear Message</button>
 </div>
-<br>
 <br>
 <app-footer></app-footer>
