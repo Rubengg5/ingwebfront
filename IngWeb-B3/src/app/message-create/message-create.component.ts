@@ -14,7 +14,7 @@ import { ParseError } from '@angular/compiler';
 })
 export class MessageCreateComponent {
 
-  datos: unknown = "-1";
+  datos : unknown = "-1";
   responseOK: boolean = false;
   loggedUser: any = localStorage.getItem("id");
 
@@ -31,15 +31,12 @@ export class MessageCreateComponent {
   constructor(private messageService: MessageService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    // const id = String(this.route.snapshot.paramMap.get('id'));
+
   }
 
   createMessage() {
     this.newMessage.id = uuidv4();
-    //Si se ha cargado una imagen desde el pc del cliente entonces la subimos a Cloudinary y se guarda en newVivienda su nueva ruta relativa
-    if (this.datos !== "-1") {
-      //this.mandarAPI(this.datos)
-    }
+    
     this.messageService.createMessage(this.newMessage).subscribe(data => {
       this.responseOK = (data !== null);
       console.log(this.responseOK);
@@ -50,6 +47,7 @@ export class MessageCreateComponent {
     });
   }
 
+  //los 3 metodos de abajo sirven para subir foto a cloudinary
   async capturarFile($event: Event) {
     const target = $event.target as HTMLInputElement
     if (target.files !== null) {
@@ -84,4 +82,5 @@ export class MessageCreateComponent {
       console.error(error);
     });
   }
+
 }

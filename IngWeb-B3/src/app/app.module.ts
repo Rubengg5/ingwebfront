@@ -35,6 +35,7 @@ import { PaypalComponent } from './paypal/paypal.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageCreateComponent } from './message-create/message-create.component';
 import { LogsComponent } from './logs/logs.component';
+import { MessageDetailsComponent } from './message-details/message-details.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { LogsComponent } from './logs/logs.component';
     MensajesComponent,
     MessagesComponent,
     MessageCreateComponent,
-    LogsComponent
+    LogsComponent,
+    MessageDetailsComponent
   ],
   imports: [
     BrowserModule,

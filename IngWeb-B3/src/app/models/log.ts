@@ -1,6 +1,6 @@
 export interface Log{
-    timestamp: string;
-    usuario: string;
-    caducidad: string;
-    token: string;
+    timestamp: any;
+    usuario: any;
+    caducidad: any;
+    token: any;
 }

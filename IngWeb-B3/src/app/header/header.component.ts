@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     if (this.isLoggedIn){
       this.servicioUsers.getUsuarioById(this.loggedUser).subscribe(data =>{
       this.user = data
-      console.log(data);
     })
   }
   }

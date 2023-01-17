@@ -18,7 +18,8 @@
             </tr>
         </thead>
         <tbody *ngFor="let message of messagesList">
-            <tr (click)="showMessageContent(message.id)" [ngClass]="{'row-pointer':isHover}" (mouseenter)="isHover=true" (mouseleave)="isHover=false">
+            <tr (click)="showMessageContent(message.id)" [ngClass]="{'row-pointer':isHover}" (mouseenter)="isHover=true"
+                (mouseleave)="isHover=false">
                 <td>{{message.id}}</td>
                 <td>{{message.de}}</td>
                 <td>{{message.para}}</td>
@@ -30,13 +31,48 @@
 
     <div class="card">
         <div class="card-header">
-          <h5>Mensaje</h5>
+            <h5>Mensaje</h5>
         </div>
         <div class="card-body" [innerHTML]="messageContent"></div>
         <img [src]="messageImage" *ngIf="messageImage" alt="Imagen del mensaje">
-    <br>
+        <br>
+    </div> 
 
     <button class="btn btn-warning btn-lg" type="button" [routerLink]="['/newMessage']">Crear Message</button>
+
+    <br><br>
+
+    <!-- MAPA -->
+    <div class="form-group">
+        <!-- <label for="inputUbicacion">
+            <h5>Calle</h5>
+        </label>
+        <input type="text" class="form-control" (change)="actualizarMapa()" [(ngModel)]="calle"
+            [ngModelOptions]="{standalone: true}" id="inputUbicacion"> -->
+        <br>
+        <!-- MUCHAS CHINCHETAS -->
+        <app-mapa [ubicaciones]="ubicaciones"></app-mapa>
+
+        <!-- UNA CHINCHETA -->
+        <!-- <app-mapa [latitud]="lat" [longitud]="lon"></app-mapa> -->
+    </div>
+
+    <br>
+
+    <!-- <form (ngSubmit)="actualizarMapaForm()" #forma="ngForm"> -->
+        <!-- <div class="form-group"> -->
+            <label for="inputUbicacion">Seleccione una o varias opciones</label>
+            <select multiple class="custom-select" class="form-control" [(ngModel)]="ubicaciones"
+            [ngModelOptions]="{standalone: true}" id="inputUbicacion">
+            <option *ngFor="let ubicacion of ubicacionesDummy" [value]="ubicacion" >{{ubicacion.lat}}, {{ubicacion.lon}}</option>
+            </select>
+
+            <!-- <button (click)="actualizarMapaForm()">Agregar</button> -->
+        <!-- </div> -->
+        <!-- <button type="submit" class="btn btn-warning">Mostrar</button> -->
+    <!-- </form> -->
+
 </div>
-<br>
+
+
 <app-footer></app-footer>

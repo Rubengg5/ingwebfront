@@ -19,6 +19,7 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ViviendaCreateComponent } from './vivienda-create/vivienda-create.component';
 import { ViviendaDetailsComponent } from './vivienda-details/vivienda-details.component';
+import { MessageDetailsComponent } from './message-details/message-details.component';
 import { ViviendaModifyComponent } from './vivienda-modify/vivienda-modify.component';
 import { ViviendasComponent } from './viviendas/viviendas.component';
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'usuario/:id', component: UsuarioComponent },
   { path: 'reserva/:id', component: ReservaDetailsComponent },
   { path: 'vivienda/:id', component: ViviendaDetailsComponent },
+  { path: 'message-details', component: MessageDetailsComponent },
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent},
   {path: 'viviendas/:id', component: ViviendasComponent},
