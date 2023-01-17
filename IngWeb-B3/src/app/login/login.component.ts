@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthGuardService } from '../services/auth-guard.service';
 import { CredentialResponse } from 'google-one-tap';
 import { environment } from '../../environments/environment';
-import { LogService } from '../services/log.service';
+// import { LogService } from '../services/log.service';
 import { Log } from '../models/log';
 
 @Component({
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private service: AuthGuardService,
-    private logService: LogService,
+    // private logService: LogService,
     private _ngZone: NgZone) { }
 
   ngOnInit(): void {
@@ -65,12 +65,12 @@ export class LoginComponent implements OnInit {
         // console.log(x.caducidad);
         console.log(localStorage);
 
-        this.log.token = x.token;
-        this.log.usuario = x.id;
-        this.log.caducidad = x.caducidad;
-        this.log.timestamp = (new Date(Date.now())).toLocaleDateString();
-        this.logService.createLog(this.log);
-        console.log(this.log);
+        // this.log.token = x.token;
+        // this.log.usuario = x.id;
+        // this.log.caducidad = x.caducidad;
+        // this.log.timestamp = (new Date(Date.now())).toLocaleDateString();
+        // this.logService.createLog(this.log);
+        // console.log(this.log);
 
         this._ngZone.run(() => {
           this.router.navigate(['/']);
