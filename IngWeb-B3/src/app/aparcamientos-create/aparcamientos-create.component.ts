@@ -49,8 +49,8 @@ export class AparcamientosCreateComponent implements OnInit {
   }
 
   createImagen(){
-    this.newImagen._id = Math.random();
-    
+    this.newImagen._id = Math.floor(100000 + Math.random() * 900000);
+
     this.imagensService.createImagen(this.newImagen).subscribe(data => 
     {
         this.responseOK = (data !== null);
