@@ -6,64 +6,36 @@ import { AppComponent } from './app.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ViviendaDetailsComponent } from './vivienda-details/vivienda-details.component';
-import { ReservaDetailsComponent } from './reserva-details/reserva-details.component';
 import { LoginComponent } from './login/login.component';
 import { GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import { ViviendasComponent } from './viviendas/viviendas.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ReservasComponent } from './reservas/reservas.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { ViviendaCreateComponent } from './vivienda-create/vivienda-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
-import { ReservaCreateComponent } from './reserva-create/reserva-create.component';
-import { ReservaModifyComponent } from './reserva-modify/reserva-modify.component';
-import { ViviendaModifyComponent } from './vivienda-modify/vivienda-modify.component';
-import { ReservasViviendaComponent } from './reservas-vivienda/reservas-vivienda.component';
 import { GasolinerasComponent } from './gasolineras/gasolineras.component';
 import { LogoutComponent } from './logout/logout.component';
-import { ValoracionesComponent } from './valoraciones/valoraciones.component';
-import { MensajesComponent } from './mensajes/mensajes.component';
 import { NgxPayPalModule } from 'ngx-paypal';
-import { PaypalComponent } from './paypal/paypal.component';
-import { MessagesComponent } from './messages/messages.component';
-import { MessageCreateComponent } from './message-create/message-create.component';
-import { LogsComponent } from './logs/logs.component';
-import { MessageDetailsComponent } from './message-details/message-details.component';
+import { AparcamientosComponent } from './aparcamientos/aparcamientos.component';
+import { AparcamientosCreateComponent } from './aparcamientos-create/aparcamientos-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
-    ViviendaDetailsComponent,
-    ReservaDetailsComponent,
     LoginComponent,
-    ViviendasComponent,
     MapaComponent,
     HeaderComponent,
     FooterComponent,
-    ReservasComponent,
     InicioComponent,
-    ViviendaCreateComponent,
-    ReservaCreateComponent,
-    ReservaModifyComponent,
-    ViviendaModifyComponent,
-    ReservasViviendaComponent,
     GasolinerasComponent,
-    ValoracionesComponent,
     LogoutComponent,
-    PaypalComponent,
-    MensajesComponent,
-    MessagesComponent,
-    MessageCreateComponent,
-    LogsComponent,
-    MessageDetailsComponent
+    AparcamientosComponent,
+    AparcamientosCreateComponent
   ],
   imports: [
     BrowserModule,

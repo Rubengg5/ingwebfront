@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Vivienda } from '../models/vivienda';
+import { Imagen } from '../models/imagen';
 import { Ubicacion } from '../models/ubicacion';
-import { ViviendaService } from '../services/vivienda.service';
+import { ImagenService } from '../services/imagen.service';
 import {v4 as uuidv4} from 'uuid';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { MapaComponent } from '../mapa/mapa.component';
@@ -11,13 +11,13 @@ import { strict } from 'assert';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-vivienda-create',
-  templateUrl: './vivienda-create.component.html',
-  styleUrls: ['./vivienda-create.component.css']
+  selector: 'app-imagen-imagen',
+  templateUrl: './aparcamientos-create.component.html',
+  styleUrls: ['./aparcamientos-create.component.css']
 })
 
 
-export class ViviendaCreateComponent implements OnInit {
+export class AparcamientosCreateComponent implements OnInit {
 
   ubicacion: Ubicacion = {
     lat: 0,
@@ -34,57 +34,34 @@ export class ViviendaCreateComponent implements OnInit {
   'Orense','Palencia','Las Palmas','Pontevedra','La Rioja','Salamanca','Segovia','Sevilla','Soria','Tarragona',
   'Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya','Zamora','Zaragoza'];
 
-  newVivienda: Vivienda = {
-    id: "",
-    nombre: "",
-    descripcion: "",
-    imagen: "",
-    propietario: JSON.stringify(localStorage.getItem("id")),
-    localidad: "",
-    provincia: "",
-    ubicacion: this.ubicacion,
-    tipo: "",
-    calle: "",
-    viviendaCompleta: true,
-    precioNoche: -1,
-    maxOcupantes:-1
+  newImagen: Imagen = {
+    _id:0,
+    idAparcamiento:0,
+    imagen:""
   }
 
   responseOK: boolean = false;
 
-  constructor(private geocodingService: GeocodingService, private viviendasService: ViviendaService, private route: ActivatedRoute,
+  constructor(private geocodingService: GeocodingService, private imagensService: ImagenService, private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  createVivienda(){
-    this.newVivienda.id = uuidv4();
-    //Si se ha cargado una imagen desde el pc del cliente entonces la subimos a Cloudinary y se guarda en newVivienda su nueva ruta relativa
-    if(this.datos !== "-1"){
-      //this.mandarAPI(this.datos)
-    }
-    this.viviendasService.createVivivenda(this.newVivienda).subscribe(data => 
+  createImagen(){
+    this.newImagen._id = Math.random();
+    
+    this.imagensService.createImagen(this.newImagen).subscribe(data => 
     {
         this.responseOK = (data !== null);
         console.log(this.responseOK)
         if(this.responseOK){
-          this.router.navigate(['/vivienda', this.newVivienda.id])
+          this.router.navigate(['/aparcamientos'])
         }
     });
 
 
   }
-  actualizarMapa(){
-    console.log("Actualizar mapa", this.calle)
-    this.geocodingService.getCoordenadasFromCalle(this.calle).subscribe(data => 
-    {
-      this.lat= data.lat;
-      this.lon= data.lon;
-      this.newVivienda.ubicacion = data
-    })
-    }
-
     async capturarFile($event: Event) {
       const target = $event.target as HTMLInputElement
       if (target.files !== null){
@@ -114,7 +91,7 @@ export class ViviendaCreateComponent implements OnInit {
         axios.post(environment.cloudinaryApiUrl, payload).then((response) => {
           console.log(response.data);
           nombreArchivo = response.data["url"]
-          this.newVivienda.imagen=nombreArchivo
+          this.newImagen.imagen=nombreArchivo
       }).catch((error) => {
           console.error(error);
       });

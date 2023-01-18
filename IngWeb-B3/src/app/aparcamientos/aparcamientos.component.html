@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<!--Container-->
+<div *ngIf="!legitimo">
+    <h1 style="text-align: center;">No tienes acceso a esta página</h1>
+</div>
+<div *ngIf="legitimo" class="container px-4 py-5" id="custom-cards">
+    <h1 class="pb-1 border-bottom">Aparcamientos</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Capacidad</th>
+                <th>Libres</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <!-- (click)="showAparcamientoContent(Aparcamiento.id)" [ngClass]="{'row-pointer':isHover}" (mouseenter)="isHover=true"
+                (mouseleave)="isHover=false" -->
+        <tbody *ngFor="let aparcamiento of aparcamientosList" (click)="showMessageContent(aparcamiento._id)" [ngClass]="{'row-pointer':isHover}" (mouseenter)="isHover=true"
+        (mouseleave)="isHover=false">
+            <tr >
+                <td>{{aparcamiento._id}}</td>
+                <td>{{aparcamiento.nombre}}</td>
+                <td>{{aparcamiento.direccion}}</td>
+                <td>{{aparcamiento.latitud}}</td>
+                <td>{{aparcamiento.longitud}}</td>
+                <td>{{aparcamiento.capacidad}}</td>
+                <td>{{aparcamiento.libres}}</td>
+                <td>{{aparcamiento.correo}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Aparcamiento</h5>
+        </div>
+        <div class="card-body" [innerHTML]="aparcamientoContent"></div>
+        <img [src]="aparcamientoImage" *ngIf="aparcamientoImage" alt="Imagen del mensaje">
+        <br>
+    </div> 
+
+    <a href="/newImagen" class="btn btn-warning">Crear Imagen</a>
+
+    <br><br>
+
+    <!-- MAPA -->
+    <div class="form-group">
+        <label for="inputUbicacion">
+            <h5>Introduce parte del nombre de la calle</h5>
+        </label>
+        <input type="text" class="form-control" (change)="actualizarMapa()" [(ngModel)]="calle"
+            [ngModelOptions]="{standalone: true}" id="inputUbicacion">
+        <br>
+        <!-- MUCHAS CHINCHETAS -->
+        <!-- <button class="btn btn-warning btn-lg" type="button" (click)="actualizarMapa()" [(ngModel)]="ubicaciones" [ngModelOptions]="{standalone: true}">Mostrar Aparcamientos</button> -->
+        <br>
+        <!-- <app-mapa [ubicaciones]="ubicaciones"></app-mapa> -->
+
+        <!-- UNA CHINCHETA -->
+        <app-mapa [latitud]="lat" [longitud]="lon"></app-mapa>
+    </div>
+
+    <br>
+
+</div>
+
+
+<app-footer></app-footer>

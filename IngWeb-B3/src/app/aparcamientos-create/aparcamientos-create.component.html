@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="container-xxl bd-gutter p-5 mb-4 bg-light rounded-3">
+    <h1 class="display-5 fw-bold">Nueva Imagen</h1>
+    <form (ngSubmit)="createImagen()" #forma="ngForm">
+        <div class="row align-items-md-stretch">
+            <div class="form-group col-md-6">
+            <label for="idAparcamiento">Nombre</label>
+            <input type="number" [(ngModel)]="newImagen.idAparcamiento" class="form-control" id="idAparcamiento" placeholder="Id Aparcamiento" name="idAparcamiento" required>
+            </div>
+        </div>
+            
+            <div class="form-group col-md-2">
+            <label for="inputImagen">Imagen</label>
+            <input (change)="capturarFile($event!)" type="file">
+            </div>
+        <br>
+        <!-- <div><app-mapa [latitud]="lat" [longitud]="lon"></app-mapa></div> -->
+        <br>
+        
+        <br>
+        <button type="submit" class="btn btn-warning">Crear Imagen</button>
+        
+    </form>
+</div>
+
+<app-footer></app-footer>
